@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>image/Add_black.svg</file>
+        <file>image/Add_white.svg</file>
+    </qresource>
+</RCC>

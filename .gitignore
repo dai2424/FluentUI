@@ -1,0 +1,77 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@dai2424 
+github
+/
+gitignore
+Public
+Fork your own copy of github/gitignore
+Code
+Pull requests
+371
+Actions
+Security
+Insights
+Beta Try the new code view
+gitignore/C++.gitignore
+
+pmartinez added prerequisites for C and C++
+Latest commit 2c52d02 on Jun 30, 2016
+ History
+ 8 contributors
+@malleor@peterfpeterson@rhysd@jlokimlin@bnoordhuis@d2s@mrtazz@starrify
+32 lines (26 sloc)  270 Bytes
+
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+
+# Fortran module files
+*.mod
+*.smod
+
+CMakeLists.txt.user
+CMakeCache.txt
+CMakeFiles
+CMakeScripts
+Testing
+Makefile
+cmake_install.cmake
+install_manifest.txt
+compile_commands.json
+CTestTestfile.cmake
+_deps
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+build/
+.vscode/
+.idea/

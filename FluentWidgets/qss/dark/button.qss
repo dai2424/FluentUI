@@ -1,0 +1,63 @@
+FW--PushButton,
+FW--ToolButton {
+    background : rgba(255, 255, 255, 0.0605);
+    border: 1px solid rgba(255, 255, 255, 0.053);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 5px;
+    color: white;
+    font: 14px 'Segoe UI', 'Microsoft YaHei';
+    padding: 5px 12px 6px 12px;
+    outline: no;
+}
+
+FW--PushButton[hasIcon=false] {
+    padding: 5px 12px 6px 12px;
+}
+
+FW--PushButton[hasIcon=true] {
+    padding: 5px 12px 6px 36px;
+}
+
+FW--PushButton:hover, 
+FW--PushBUtton:hover {
+    background: rgba(255, 255, 255, 0.0837);
+}
+
+FW--PushButton:pressed,
+FW--ToolButton:pressed {
+    color: rgba(255, 255, 255, 0.786);
+    background: rgba(255, 255, 255, 0.0326);
+    border-top: 1px solid rgba(255, 255, 255, 0.053);
+}
+
+FW--PushButton:disabled,
+FW--ToolButton:disabled {
+    color: rgba(255, 255, 255, 0.3628);
+    background: rgba(255, 255, 255, 0.0419);
+    border: 1px solid rgba(255, 255, 255, 0.053);
+    border-top: 1px solid rgba(255, 255, 255, 0.053);
+}
+
+FW--PrimaryPushButton {
+    color: black;
+    background-color: --ThemeColorPrimary;
+    border: 1px solid --ThemeColorLight1;
+    border-bottom: 1px solid --ThemeColorLight2;
+}
+
+FW--PrimaryPushButton:hover{
+    background-color: --ThemeColorDark1;
+    border: 1px solid --ThemeColorLight1
+}
+
+FW--PrimaryPushButton:pressed {
+    color: rgba(0, 0, 0, 0.63);
+    background-color: --ThemeColorDark2;
+    border: 1px solid --ThemeColorDark2;
+}
+
+FW--PrimaryPushButton:disabled {
+    color: rgba(255, 255, 255, 0.43);
+    background-color: rgb(52, 52, 52);
+    border: 1px solid rgb(52, 52, 52);
+}
