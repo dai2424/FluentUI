@@ -49,11 +49,14 @@ QIconEngine *IconEngine::clone() const {
     return new IconEngine(m_iconPath);
 }
 /** FlunetIconBase's implementation **/
-FluentIconBase::FluentIconBase(const QString &path)
+FluentIconBase::FluentIconBase(const QString &path, bool reg)
     : m_iconEngine(new IconEngine(path)) {
+    if(reg)
+        SSMIns.registerIcon(this);
 }
 
 FluentIconBase::~FluentIconBase() {
+    SSMIns.deRegisterIcon(this);
 }
 
 void FluentIconBase::render(QPainter *painter, const QRect &rect, const QVector<int> &indexes, const QHash<QString, QString> &attributes) {
@@ -224,15 +227,17 @@ QString FluentIcon::iconName(IconType type) {
             return "ChevronRight";
         case BackgroundFill:
             return "BackgroundColor";
+        default:
+            return "";
     }
 }
 
-FluentIcon::FluentIcon(const QString &customPath)
-    : FluentIconBase(customPath), m_theme(Theme::AUTO), m_type(Unknown) {
+FluentIcon::FluentIcon(const QString &customPath, bool reg)
+    : FluentIconBase(customPath, reg), m_theme(Theme::AUTO), m_type(Unknown) {
 }
 
-FluentIcon::FluentIcon(IconType type, Theme t)
-    : FluentIconBase(""), m_theme(t), m_type(type) {
+FluentIcon::FluentIcon(IconType type, Theme t, bool reg)
+    : FluentIconBase("", reg), m_theme(t), m_type(type) {
     m_iconEngine->setIconPath(iconPath());
 }
 

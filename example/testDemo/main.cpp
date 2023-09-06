@@ -1,5 +1,6 @@
 ﻿#include "Button.h"
 #include "StyleSheet.h"
+#include "SwitchButton.h"
 #include <FluentWidget.h>
 #include <Icon.h>
 #include <QApplication>
@@ -18,26 +19,32 @@ class TestWidget : public QWidget {
 public:
     TestWidget(QWidget *parent = nullptr)
         : QWidget(nullptr) {
-        this->setStyleSheet("background : rgb(52, 52, 52)");
-        QLayout *layout  = new QVBoxLayout(this);
-        PushButton *btn1 = new PushButton("Button", this);
-        btn1->resize(200, 40);
+        this->setStyleSheet("background : rgb(31, 31, 31)");
 
-        FluentIcon *icon2 = new FluentIcon(FluentIcon::Menu);
-        PushButton *btn2  = new PushButton("AddButton", icon2, this);
-        btn2->resize(200, 40);
+        QVBoxLayout *layout  = new QVBoxLayout(this);
+        FluentIcon *toolIcon = new FluentIcon(FluentIcon::Setting);
+        ToolButton *toolBtn  = new ToolButton(toolIcon, this);
 
-        PrimaryPushButton *btn3 = new PrimaryPushButton("PrimaryPushBurron", this);
-        btn3->resize(200, 40);
+        SwitchButton *swhBtn = new SwitchButton(this);
+        swhBtn->setOnText("on");
+        swhBtn->setOffText("off");
 
-        FluentIcon *icon4       = new FluentIcon(FluentIcon::Menu);
-        PrimaryPushButton *btn4 = new PrimaryPushButton("PrimaryPushBurron", icon4, this);
-        btn4->resize(200, 40);
+       
+        layout->addWidget(toolBtn, 0, Qt::AlignCenter);
+        layout->addWidget(swhBtn, 0, Qt::AlignCenter);
+   
 
-        layout->addWidget(btn1);
-        layout->addWidget(btn2);
-        layout->addWidget(btn3);
-        layout->addWidget(btn4);
+        this->resize(400, 500);
+        connect(toolBtn, &QToolButton::clicked, this, [this]() {
+            if(FWIns.isDark()) {
+                FWIns.setTheme(Theme::LIGHT);
+                this->setStyleSheet("background : rgb(255, 255, 255)");
+            }
+            else {
+                FWIns.setTheme(Theme::DARK);
+                this->setStyleSheet("background : rgb(31, 31, 31)");
+            }
+        });
     }
 
 protected:
@@ -49,6 +56,7 @@ protected:
 int main(int argc, char **argv) {
     Q_INIT_RESOURCE(fluentwidgets);
     FWIns.setTheme(Theme::DARK);
+
     QApplication a(argc, argv);
     TestWidget w;
     w.show();

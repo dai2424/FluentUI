@@ -29,6 +29,15 @@ void StyleSheetManager::deRegisterWidget(const QString &widgetType, QWidget *wid
     }
 }
 
+void FW::StyleSheetManager::registerIcon(FluentIconBase *icon) {
+    if(icon)
+        m_icons.push_back(icon);
+}
+
+void FW::StyleSheetManager::deRegisterIcon(FluentIconBase *icon) {
+    m_icons.removeOne(icon);
+}
+
 void StyleSheetManager::resetStyle() {
     // 1、获取类型列表
     for(auto type : m_widgets.keys()) {
@@ -36,8 +45,18 @@ void StyleSheetManager::resetStyle() {
         QString qss = FSSIns.getQss(type, FWIns.theme());
         // 3、为该类型组件设置qss
         for(auto *widget : m_widgets.values(type)) {
-            widget->setStyleSheet(qss);
+            if(widget != nullptr)
+                widget->setStyleSheet(qss);
         }
+    }
+}
+
+void StyleSheetManager::resetIconTheme(Theme theme) {
+    for(auto *icon : m_icons) {
+        if(theme == DARK)
+            icon->setTheme(LIGHT);
+        else
+            icon->setTheme(DARK);
     }
 }
 
@@ -57,6 +76,8 @@ QString FluentStyleSheet::typeName(Type t) {
             return "menu";
         case Button:
             return "button";
+        case SwitchButton:
+            return "switch_button";
         default:
             break;
     }
@@ -117,6 +138,10 @@ QString FluentStyleSheet::applyThemeColor(const QString &qss) {
 
 QString FluentStyleSheet::getQss(const QString &type, Theme theme) {
     QString themePath;
+    if(theme == Theme::AUTO) {
+        theme = FWIns.theme();
+    }
+
     if(theme == Theme::DARK) {
         themePath = "dark/";
     }

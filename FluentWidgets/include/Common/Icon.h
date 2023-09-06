@@ -33,10 +33,9 @@ private:
 class FluentIconBase : public QObject {
     Q_OBJECT
 public:
-    explicit FluentIconBase(const QString &path);
+    explicit FluentIconBase(const QString &path, bool reg = true);
     virtual ~FluentIconBase();
 
-    
     virtual QIcon icon()             = 0;
     virtual QString typeName() const = 0;
     virtual QString enumName() const = 0;
@@ -140,8 +139,8 @@ public:
     Q_ENUM(IconType)
     static QString iconName(IconType type);
 
-    explicit FluentIcon(const QString &customPath);
-    explicit FluentIcon(IconType type, Theme t = Theme::AUTO);
+    explicit FluentIcon(const QString &customPath, bool reg = true);
+    explicit FluentIcon(IconType type, Theme t = Theme::AUTO, bool reg = true);
     ~FluentIcon();
 
     QIcon icon() override;

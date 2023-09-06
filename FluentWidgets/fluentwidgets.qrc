@@ -188,6 +188,9 @@
         <file>images/tree_view/TreeViewOpen_white.svg</file>
         <file>qss/light/button.qss</file>
         <file>qss/dark/button.qss</file>
+        <file>qss/light/switch_button.qss</file>
+        <file>qss/dark/switch_button.qss</file>
+
         <!-- <file>qss/dark/check_box.qss</file>
         <file>qss/dark/color_dialog.qss</file>
         <file>qss/dark/combo_box.qss</file>
@@ -204,7 +207,6 @@
         <file>qss/dark/slider.qss</file>
         <file>qss/dark/spin_box.qss</file>
         <file>qss/dark/state_tool_tip.qss</file>
-        <file>qss/dark/switch_button.qss</file>
         <file>qss/dark/tool_tip.qss</file>
         <file>qss/dark/tree_view.qss</file>
         <file>qss/light/button.qss</file>
@@ -219,12 +221,12 @@
         <file>qss/light/menu.qss</file>
         <file>qss/light/message_dialog.qss</file>
         <file>qss/light/navigation_interface.qss</file>
-        <file>qss/light/setting_card.qss</file>
         <file>qss/light/setting_card_group.qss</file>
         <file>qss/light/slider.qss</file>
         <file>qss/light/spin_box.qss</file>
+                <file>qss/light/setting_card.qss</file>
         <file>qss/light/state_tool_tip.qss</file>
-        <file>qss/light/switch_button.qss</file>
+
         <file>qss/light/tool_tip.qss</file>
         <file>qss/light/tree_view.qss</file>
         <file>images/icons/Accept_black.svg</file>

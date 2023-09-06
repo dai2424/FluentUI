@@ -1,6 +1,6 @@
 FW--PushButton,
 FW--ToolButton {
-    background : rgba(255, 255, 255, 0.0605);
+    background: rgba(255, 255, 255, 0.0605);
     border: 1px solid rgba(255, 255, 255, 0.053);
     border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 5px;
@@ -8,6 +8,10 @@ FW--ToolButton {
     font: 14px 'Segoe UI', 'Microsoft YaHei';
     padding: 5px 12px 6px 12px;
     outline: no;
+}
+
+FW--ToolButton {
+    padding: 5px 9px 6px 8px;
 }
 
 FW--PushButton[hasIcon=false] {
@@ -18,7 +22,7 @@ FW--PushButton[hasIcon=true] {
     padding: 5px 12px 6px 36px;
 }
 
-FW--PushButton:hover, 
+FW--PushButton:hover,
 FW--PushBUtton:hover {
     background: rgba(255, 255, 255, 0.0837);
 }
@@ -45,7 +49,7 @@ FW--PrimaryPushButton {
     border-bottom: 1px solid --ThemeColorLight2;
 }
 
-FW--PrimaryPushButton:hover{
+FW--PrimaryPushButton:hover {
     background-color: --ThemeColorDark1;
     border: 1px solid --ThemeColorLight1
 }
@@ -60,4 +64,86 @@ FW--PrimaryPushButton:disabled {
     color: rgba(255, 255, 255, 0.43);
     background-color: rgb(52, 52, 52);
     border: 1px solid rgb(52, 52, 52);
+}
+
+
+FW--RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei';
+    color: white;
+}
+
+FW--RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 11px;
+    border: 2px solid #848484;
+    background-color: transparent;
+    margin-right: 4px;
+}
+
+FW--RadioButton::indicator:hover {
+    background-color: rgba(255, 255, 255, 16);
+}
+
+FW--RadioButton::indicator:pressed {
+    border: 2px solid #434343;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(31, 31, 31),
+            stop:0.5 rgb(31, 31, 31),
+            stop:0.6 rgb(42, 42, 42),
+            stop:1 rgb(42, 42, 42));
+}
+
+FW--RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(31, 31, 31),
+            stop:0.5 rgb(31, 31, 31),
+            stop:0.6 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(31, 31, 31),
+            stop:0.6 rgb(31, 31, 31),
+            stop:0.7 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(31, 31, 31),
+            stop:0.5 rgb(31, 31, 31),
+            stop:0.6 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--RadioButton:disabled {
+    color: rgb(150, 150, 150);
+}
+
+FW--RadioButton::indicator:disabled {
+    border: 2px solid #646464;
+    background-color: transparent;
+}
+
+FW--TransparentToolButton {
+    background-color: rgba(255, 255, 255, 0.05); 
+    border-radius: 4px;
+    margin: 0;
+}
+
+FW--TransparentToolButton:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+FW--TransparentToolButton:pressed {
+    background-color: rgba(255, 255, 255, 0.1);
 }

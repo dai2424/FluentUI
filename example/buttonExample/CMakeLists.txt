@@ -11,7 +11,7 @@ SET(CMAKE_AUTORCC ON)
 
 find_package(Qt5 REQUIRED COMPONENTS Widgets)
 
-add_executable(buttonExample main.cpp ButtonPlane.cpp ButtonPlane.h)
+add_executable(buttonExample main.cpp)
 
 target_link_libraries(
     buttonExample

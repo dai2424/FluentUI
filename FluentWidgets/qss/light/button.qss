@@ -67,3 +67,75 @@ FW--PrimaryPushButton:disabled {
     background-color: rgb(205, 205, 205);
     border: 1px solid rgb(205, 205, 205);
 }
+
+FW--RadioButton {
+    min-height: 24px;
+    max-height: 24px;
+    background-color: transparent;
+    font: 14px 'Segoe UI', 'Microsoft YaHei';
+    color: black;
+}
+
+FW--RadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #999999;
+    border-radius: 11px;
+    background-color: rgba(0, 0, 0, 0.03);
+    margin-right: 4px;
+}
+
+FW--RadioButton::indicator:hover {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+FW--RadioButton::indicator:pressed {
+    border: 2px solid #bbbbbb;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 rgb(225, 225, 225),
+            stop:1 rgb(225, 225, 225));
+}
+
+FW--RadioButton::indicator:checked {
+    height: 22px;
+    width: 22px;
+    border: none;
+    border-radius: 11px;
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--RadioButton::indicator:checked:hover {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.7 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--RadioButton::indicator:checked:pressed {
+    background-color: qradialgradient(cx:0.5, cy:0.5, radius:0.5, fx:0.5, fy:0.5,
+            stop:0 rgb(255, 255, 255),
+            stop:0.5 rgb(255, 255, 255),
+            stop:0.6 --ThemeColorPrimary,
+            stop:1 --ThemeColorPrimary);
+}
+
+FW--TransparentToolButton {
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    margin: 0;
+}
+
+FW--TransparentToolButton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+FW--TransparentToolButton:pressed {
+    background-color: rgba(0, 0, 0, 0.1);
+}

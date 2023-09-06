@@ -9,6 +9,8 @@ Theme FluentWidgets::theme() const {
 
 void FluentWidgets::setTheme(const Theme theme) {
     this->m_theme = theme;
+    SSMIns.resetStyle();
+    SSMIns.resetIconTheme(theme);
 }
 
 QColor FluentWidgets::themeColor() const {
@@ -17,6 +19,7 @@ QColor FluentWidgets::themeColor() const {
 
 void FluentWidgets::setThemeColor(const QColor &color) {
     this->m_themeColor = color;
+    SSMIns.resetStyle();
 }
 
 bool FluentWidgets::isDark() {

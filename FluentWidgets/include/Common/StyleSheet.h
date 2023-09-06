@@ -2,8 +2,10 @@
 #define __STYLE_SHEET
 
 #include "Config.h"
+#include "Icon.h"
 #include <QMap>
 #include <QObject>
+#include <QVector>
 
 namespace FW {
 /**
@@ -27,12 +29,18 @@ public:
     void registerWidget(const QString &widgetType, QWidget *widget);
     // 注销widget
     void deRegisterWidget(const QString &widgetType, QWidget *widget);
-    // 重新设置w所管理widget样式
+    // 注册Icon
+    void registerIcon(FluentIconBase *icon);
+    // 注销Icon
+    void deRegisterIcon(FluentIconBase *icon);
+    // 重新设置所样式管理器管理widget样式
     void resetStyle();
-
+    // 重新设置Icon的资源
+    void resetIconTheme(Theme theme);
 private:
     StyleSheetManager();
 
+    QVector<FluentIconBase *> m_icons;
     QMultiMap<QString, QWidget *> m_widgets;
 };
 
@@ -51,7 +59,8 @@ class FluentStyleSheet {
 public:
     enum Type {
         Menu = 0,
-        Button
+        Button,
+        SwitchButton
     };
 
     static FluentStyleSheet &getInstance();
